@@ -21,4 +21,8 @@ async def on_ready():
 async def ping(ctx):
     await client.say("Pong!")
 
+@client.command(pass_context = True)
+async def kick(ctx, userName: discord.User):
+    await client.kick(userName)
+
 client.run(SLOTHBOT_KEY.key)
